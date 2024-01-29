@@ -5,9 +5,9 @@ import player from "./datasheet";
 function App() {
   return (
     <>
-      <div className="background">
-        <div className="container">
-          <h1>{player[2]}</h1>
+      <div className="background d-flex justify-content-center">
+        <div className="wrapper container-fluid ">
+          <h1>testing</h1>
         </div>
       </div>
     </>
