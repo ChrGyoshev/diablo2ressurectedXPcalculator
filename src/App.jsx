@@ -1,19 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import background from './assets/background.png'
+import "./App.css";
+
+import player from "./datasheet";
 
 function App() {
-
-
   return (
     <>
-    <div className="background">
-      <img src={background} alt="" />
-    </div>
+      <div className="background">
+        <div className="container">
+          <h1>{player[2]}</h1>
+        </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
