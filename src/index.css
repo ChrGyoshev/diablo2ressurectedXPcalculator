@@ -1,7 +1,15 @@
+@font-face {
+  font-family: "Light";   
+  src: local("diablo"),
+    url("./assets/fonts/diablo.ttf") format("truetype");
+}
+
+
 body {
   margin: 0;
   padding: 0;
   width: 100vw;
+  user-select: none;
 }
 
 .background {
@@ -21,23 +29,22 @@ body {
   height: 300px;
   color: black;
   background-color: white;
-  z-index: 2;
-  position: absolute;
   opacity: 0.8;
-  border-radius: 10px;
   width: 80%;
+  
 }
 
-/* .background:after {
-  content: "\A";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 1;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-} */
+.chrisey {
+  color: black;
+  font-family: 'Light';
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    width: 90%;
+    text-align: center;
+    
+  }
+}
