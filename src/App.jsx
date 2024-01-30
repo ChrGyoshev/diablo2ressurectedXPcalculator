@@ -1,14 +1,53 @@
 import "./App.css";
 import "./assets/fonts/diablo.ttf";
 import player from "./datasheet";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 function App() {
+  const options = Array.from({ length: 99 }, (_, index) => (
+    <option key={index + 1} value={index + 1}>
+      {index + 1}
+    </option>
+  ));
+
   return (
     <>
-      <div className="background d-flex justify-content-center align-content-center">
-        <span className="wrapper container-fluid d-flex justify-content-center m-4 p-5 rounded">
-          <h1 className="chrisey">Diablo II XP Calculator</h1>
-        </span>
+      <div className="background d-flex justify-content-center align-content-center align-items-center">
+        <div className="wrapper d-flex flex-column justify-content-start  align-items-center rounded-2">
+          <h1 className="chrisey p-5">Diablo II XP Calculator</h1>
+          <div className="form-container container-fluid d-flex justify-content-center">
+            <Form className="">
+              <Form.Group className="mb-3 " controlId="formBasicEmail">
+                <Form.Label className="">Enter your level </Form.Label>
+                <Form.Select aria-label="Default select example">
+                  <option>Level</option>
+                  {options}
+                </Form.Select>
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Enter your current XP</Form.Label>
+                <Form.Control type="password" placeholder="Password" />
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicNumber">
+                <Form.Label>Enter XP gain per run</Form.Label>
+                <Form.Control type="number" label="Check me out" />
+              </Form.Group>
+
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </Form>
+          </div>
+        </div>
       </div>
     </>
   );

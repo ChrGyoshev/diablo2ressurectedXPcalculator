@@ -20,7 +20,7 @@ body {
     background-size: cover;
     background-position: center center;
     height: 100%;
-    filter: brightness(60%);
+    filter: brightness(90%);
     z-index: -2;
 }
 
@@ -29,14 +29,22 @@ body {
   height: 300px;
   color: black;
   background-color: white;
-  opacity: 0.8;
-  width: 80%;
+  opacity: 0.9;
+  width: 60%;
+  min-height: 70vh;
+  z-index: 2;
+  position: absolute;
   
 }
 
 .chrisey {
   color: black;
   font-family: 'Light';
+  
+}
+
+.form-label {
+  font-weight: bold;
 }
 
 
@@ -45,6 +53,11 @@ body {
   .wrapper {
     width: 90%;
     text-align: center;
+    min-height: 70vh;
     
   }
+}
+
+.form-container {
+  background-color: white;
 }
