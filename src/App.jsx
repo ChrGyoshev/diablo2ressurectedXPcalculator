@@ -36,15 +36,18 @@ function App() {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>Enter your current XP</Form.Label>
-                  <Form.Control type="password" placeholder="Password" />
+                  <Form.Control type="number" placeholder="0000000000" />
                   <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
+                    Enter full number without separtor
                   </Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicNumber">
                   <Form.Label>Enter XP gain per run</Form.Label>
                   <Form.Control type="number" label="Check me out" />
+                  <Form.Text className="text-muted">
+                    Enter full number without separtor
+                  </Form.Text>
                 </Form.Group>
 
                 <Button variant="primary" type="button" onClick={clickHandler}>
