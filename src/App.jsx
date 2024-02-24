@@ -1,8 +1,4 @@
 import "./App.css";
-import "./assets/fonts/diablo.ttf";
-import player from "./datasheet";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import Result from "./Modal";
 import FormData from "./form";
@@ -14,18 +10,20 @@ function App() {
     </option>
   ));
 
+   
+
   const [result, setResult] = useState(false);
 
   const clickHandler = () => {
     setResult(!result);
-    console.log("hi");
+    
   };
 
   return (
     <>
       <div className="background d-flex justify-content-center align-content-center align-items-center">
         {!result ? (
-          <FormData options= {options} onButtonClick={clickHandler} />
+          <FormData options={options} onButtonClick={clickHandler} />
         ) : (
           <Result clickHandler={clickHandler} />
         )}

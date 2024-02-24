@@ -2,15 +2,14 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 const FormData = ({ options, onButtonClick }) => {
-  function handler() {
-    onButtonClick();
-  }
   return (
     <div className="wrapper d-flex flex-column justify-content-start  align-items-center rounded-2">
-      <h1 className="chrisey p-5">Diablo II XP Calculator</h1>
+      <h1 className="chrisey p-5" style={{ fontFamily: "diablo" }}>
+        Diablo II XP Calculator
+      </h1>
       <div className="form-container container-fluid d-flex justify-content-center">
         <Form className="">
-          <Form.Group className="mb-3 " controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label className="">Enter your level </Form.Label>
             <Form.Select aria-label="Default select example">
               <option>Level</option>
@@ -34,10 +33,19 @@ const FormData = ({ options, onButtonClick }) => {
             </Form.Text>
           </Form.Group>
 
-          <Button variant="primary" type="button" onClick={handler}>
+          <Button
+            variant="primary"
+            type="button"
+            onClick={onButtonClick}
+            style={{ fontFamily: "diablo" }}
+          >
             Submit
           </Button>
-          <Button variant="primary" type="button">
+          <Button
+            variant="primary"
+            type="button"
+            style={{ fontFamily: "diablo" }}
+          >
             Submit
           </Button>
         </Form>
