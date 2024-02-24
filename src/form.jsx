@@ -4,9 +4,9 @@ import Button from "react-bootstrap/Button";
 const FormData = ({ options, onButtonClick }) => {
   return (
     <div className="wrapper d-flex flex-column justify-content-start  align-items-center rounded-2">
-      <h1 className="chrisey p-5" style={{ fontFamily: "diablo" }}>
+      <h2 className="chrisey p-5" style={{ fontFamily: "diablo" }}>
         Diablo II XP Calculator
-      </h1>
+      </h2>
       <div className="form-container container-fluid d-flex justify-content-center">
         <Form className="">
           <Form.Group className="mb-3" controlId="formBasicEmail">
