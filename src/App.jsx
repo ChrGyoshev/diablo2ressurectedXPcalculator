@@ -3,6 +3,7 @@ import { useState } from "react";
 import Result from "./Modal";
 import FormData from "./form";
 
+
 function App() {
   const options = Array.from({ length: 99 }, (_, index) => (
     <option key={index + 1} value={index + 1}>
@@ -10,13 +11,11 @@ function App() {
     </option>
   ));
 
-   
-
   const [result, setResult] = useState(false);
 
-  const clickHandler = () => {
+  const clickHandler = (formData) => {
     setResult(!result);
-    
+    console.log(formData);
   };
 
   return (

@@ -1,7 +1,20 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { useState } from "react";
 
 const FormData = ({ options, onButtonClick }) => {
+  const [formData, newFormData] = useState({ currentXp: 0, level: 1 });
+
+  function handleButtonClick() {
+    onButtonClick(formData);
+  }
+
+  function changeHandler(event) {
+    newFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  }
   return (
     <div className="wrapper d-flex flex-column justify-content-start  align-items-center rounded-2">
       <h1 className="chrisey p-5" style={{ fontFamily: "diablo" }}>
@@ -11,7 +24,12 @@ const FormData = ({ options, onButtonClick }) => {
         <Form className="">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label className="">Enter your level </Form.Label>
-            <Form.Select aria-label="Default select example">
+            <Form.Select
+              aria-label="Default select example"
+              name="level"
+              value={formData.level}
+              onChange={changeHandler}
+            >
               <option>Level</option>
               {options}
             </Form.Select>
@@ -19,7 +37,12 @@ const FormData = ({ options, onButtonClick }) => {
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Enter your current XP</Form.Label>
-            <Form.Control type="number" placeholder="0000000000" />
+            <Form.Control
+              type="number"
+              name="currentXp"
+              value={formData.currentXp}
+              onChange={changeHandler}
+            />
             <Form.Text className="text-muted">
               Enter full number without separtor
             </Form.Text>
@@ -27,7 +50,7 @@ const FormData = ({ options, onButtonClick }) => {
 
           <Form.Group className="mb-3" controlId="formBasicNumber">
             <Form.Label>Enter XP gain per run</Form.Label>
-            <Form.Control type="number" label="Check me out" />
+            <Form.Control type="number" label="Check me out" name="xp-gain" />
             <Form.Text className="text-muted">
               Enter full number without separtor
             </Form.Text>
@@ -36,7 +59,7 @@ const FormData = ({ options, onButtonClick }) => {
           <Button
             variant="primary"
             type="button"
-            onClick={onButtonClick}
+            onClick={handleButtonClick}
             style={{ fontFamily: "diablo" }}
           >
             Submit
