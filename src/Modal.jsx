@@ -1,7 +1,8 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import player from "./datasheet";
 
-function Result({ clickHandler }) {
+function Result({ clickHandler, formData }) {
   const handler = () => {
     clickHandler();
   };
@@ -17,6 +18,8 @@ function Result({ clickHandler }) {
 
         <Modal.Body>
           <p>Modal body text goes here.</p>
+          <p>{formData.level}</p>
+          <p>{player[formData.level]}</p>
         </Modal.Body>
 
         <Modal.Footer>

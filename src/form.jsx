@@ -3,7 +3,11 @@ import Button from "react-bootstrap/Button";
 import { useState } from "react";
 
 const FormData = ({ options, onButtonClick }) => {
-  const [formData, newFormData] = useState({ currentXp: 0, level: 1 });
+  const [formData, newFormData] = useState({
+    currentXp: "",
+    level: 1,
+    xpGain: "",
+  });
 
   function handleButtonClick() {
     onButtonClick(formData);
@@ -50,7 +54,12 @@ const FormData = ({ options, onButtonClick }) => {
 
           <Form.Group className="mb-3" controlId="formBasicNumber">
             <Form.Label>Enter XP gain per run</Form.Label>
-            <Form.Control type="number" label="Check me out" name="xp-gain" />
+            <Form.Control
+              type="number"
+              name="xpGain"
+              value={formData.xpGain}
+              onChange={changeHandler}
+            />
             <Form.Text className="text-muted">
               Enter full number without separtor
             </Form.Text>
