@@ -56,8 +56,19 @@ body {
     min-height: 70vh;
     
   }
+  .modal-content {
+    width: 80%;
+    margin: auto;
+  
+  }
+    
+  
 }
 
 .form-container {
   background-color: white;
+}
+
+.modal-content {
+  opacity: 0.9;
 }
