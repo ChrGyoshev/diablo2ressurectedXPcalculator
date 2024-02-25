@@ -12,21 +12,24 @@ function Result({ clickHandler, formData }) {
       style={{ display: "block", position: "initial" }}
     >
       <Modal.Dialog className="w-90">
-        <Modal.Header closeButton onClick={handler}>
-          <Modal.Title>Modal title</Modal.Title>
-        </Modal.Header>
+        <Modal.Header closeButton onClick={handler}></Modal.Header>
 
         <Modal.Body>
-          <p>Modal body text goes here.</p>
-          <p>{formData.level}</p>
-          <p>{player[formData.level]}</p>
+          <h2>
+            You need <span className=" text-danger">186</span> more runs
+          </h2>
+          <h2 className=" text-center">to</h2>
+          <h1 className=" m-5 text-center">
+            Level <span className="text-success">95</span>
+          </h1>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={handler}>
-            Close
-          </Button>
-          <Button variant="primary">Save changes</Button>
+          <div className="d-flex justify-content-center w-100">
+            <Button variant="primary" className="ps-5 pe-5" onClick={handler}>
+              Close
+            </Button>
+          </div>
         </Modal.Footer>
       </Modal.Dialog>
     </div>

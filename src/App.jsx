@@ -1,15 +1,9 @@
 import "./App.css";
 import { useState } from "react";
-import Result from "./Modal";
+import Result from "./Result";
 import FormData from "./form";
 
 function App() {
-  const options = Array.from({ length: 99 }, (_, index) => (
-    <option key={index + 1} value={index + 1}>
-      {index + 1}
-    </option>
-  ));
-
   const [formData, setFormData] = useState({});
   const [result, setResult] = useState(false);
 
@@ -22,7 +16,7 @@ function App() {
     <>
       <div className="background d-flex justify-content-center align-content-center align-items-center">
         {!result ? (
-          <FormData options={options} onButtonClick={clickHandler} />
+          <FormData onButtonClick={clickHandler} />
         ) : (
           <Result clickHandler={clickHandler} formData={formData} />
         )}

@@ -2,18 +2,27 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 
-const FormData = ({ options, onButtonClick }) => {
+const FormData = ({ onButtonClick }) => {
   const [formData, newFormData] = useState({
     currentXp: "",
     level: 1,
     xpGain: "",
   });
 
+  const options = Array.from({ length: 20 }, (_, index) => (
+    <option key={index + 80} value={index + 80}>
+      {index + 80}
+    </option>
+  ));
+
+
   function handleButtonClick() {
     onButtonClick(formData);
   }
 
   function changeHandler(event) {
+    event.target.name === "level" && event.target.blur(); // safari requirement
+
     newFormData({
       ...formData,
       [event.target.name]: event.target.value,
@@ -65,21 +74,16 @@ const FormData = ({ options, onButtonClick }) => {
             </Form.Text>
           </Form.Group>
 
-          <Button
-            variant="primary"
-            type="button"
-            onClick={handleButtonClick}
-            style={{ fontFamily: "diablo" }}
-          >
-            Submit
-          </Button>
-          <Button
-            variant="primary"
-            type="button"
-            style={{ fontFamily: "diablo" }}
-          >
-            Submit
-          </Button>
+          <div className="text-center m-4">
+            <Button
+              variant="primary"
+              type="button"
+              onClick={handleButtonClick}
+              style={{ fontFamily: "diablo" }}
+            >
+              Submit
+            </Button>
+          </div>
         </Form>
       </div>
     </div>
