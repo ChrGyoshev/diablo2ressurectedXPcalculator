@@ -36,7 +36,8 @@ function Result({ clickHandler, formData }) {
           </h2>
           {/* <h2 className="text-center">to</h2> */}
           <h1 className="m-5 text-center">
-            Level <span className="text-success">{Number(formData.level) + 1}</span>
+            Level{" "}
+            <span className="text-success">{Number(formData.level) + 1}</span>
           </h1>
         </Modal.Body>
 
