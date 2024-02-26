@@ -1,12 +1,22 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import player from "./datasheet";
+import playerLevel from "./datasheet";
+import { useEffect, useState } from "react";
 
 function Result({ clickHandler, formData }) {
   const handler = () => {
     clickHandler();
   };
+
+  const [estimateXp, setEstimateXp] = useState(0);
+  const currentExpirience = Number(formData.currentXp);
+  const level = playerLevel[formData.level];
+  const gain = Number(formData.xpGain);
+
+  useEffect(() => {
+    setEstimateXp((level - currentExpirience) / gain);
+  }, []);
 
   return (
     <div className="modal show d-flex align-items-center justify-content-center">
@@ -20,11 +30,13 @@ function Result({ clickHandler, formData }) {
 
         <Modal.Body>
           <h2 className="text-center">
-            You need <span className=" text-danger">186</span> more runs to
+            You need{" "}
+            <span className=" text-danger">{Math.ceil(estimateXp)}</span> more
+            runs to
           </h2>
           {/* <h2 className="text-center">to</h2> */}
           <h1 className="m-5 text-center">
-            Level <span className="text-success">95</span>
+            Level <span className="text-success">{Number(formData.level) + 1}</span>
           </h1>
         </Modal.Body>
 

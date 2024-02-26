@@ -4,9 +4,9 @@ import { useState } from "react";
 
 const FormData = ({ onButtonClick }) => {
   const [formData, newFormData] = useState({
-    currentXp: "",
+    currentXp: 0,
     level: 1,
-    xpGain: "",
+    xpGain: 0,
   });
 
   const options = Array.from({ length: 20 }, (_, index) => (
