@@ -2,6 +2,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import Result from "./Result";
+import { NumericFormat } from "react-number-format";
 
 const FormData = () => {
   const [formData, newFormData] = useState({
@@ -41,15 +42,6 @@ const FormData = () => {
       [event.target.name]: event.target.value,
     });
   }
-
-  // Function to format input value with periods
-  function formatNumberWithPeriods(value) {
-    // First, remove any existing commas and non-numeric characters
-    const cleanValue = value.replace(/,/g, "").replace(/\D/g, "");
-    // Use regex to add commas every three digits from the right
-    return cleanValue.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-
   return (
     <>
       {!result ? (
@@ -74,13 +66,15 @@ const FormData = () => {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Enter your current XP</Form.Label>
-                <Form.Control
-                  type="text"
+                <NumericFormat
+                  className="form-control"
+                  value={formData.currentXp}
                   name="currentXp"
-                  value={formatNumberWithPeriods(formData.currentXp)}
+                  allowLeadingZeros
+                  thousandSeparator=","
                   onChange={changeHandler}
-                  placeholder="0"
                 />
+                ;
                 <Form.Text className="text-muted">
                   Enter full number without separtor
                 </Form.Text>
@@ -89,9 +83,9 @@ const FormData = () => {
               <Form.Group className="mb-3" controlId="formBasicNumber">
                 <Form.Label>Enter XP gain per run</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="number"
                   name="xpGain"
-                  value={formatNumberWithPeriods(formData.xpGain)}
+                  value={formData.xpGain}
                   onChange={changeHandler}
                   placeholder="0"
                 />
