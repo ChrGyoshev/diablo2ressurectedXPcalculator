@@ -73,8 +73,10 @@ const FormData = () => {
                   allowLeadingZeros
                   thousandSeparator=","
                   onChange={changeHandler}
+                  type="text"
+                  placeholder="0"
                 />
-                ;
+
                 <Form.Text className="text-muted">
                   Enter full number without separtor
                 </Form.Text>
@@ -82,12 +84,15 @@ const FormData = () => {
 
               <Form.Group className="mb-3" controlId="formBasicNumber">
                 <Form.Label>Enter XP gain per run</Form.Label>
-                <Form.Control
-                  type="number"
+                <NumericFormat
+                  type="text"
                   name="xpGain"
                   value={formData.xpGain}
                   onChange={changeHandler}
                   placeholder="0"
+                  allowLeadingZeros
+                  thousandSeparator=","
+                  className="form-control"
                 />
                 <Form.Text className="text-muted">
                   Enter full number without separtor
