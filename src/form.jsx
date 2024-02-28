@@ -4,12 +4,14 @@ import { useState } from "react";
 import Result from "./Result";
 import { NumericFormat } from "react-number-format";
 
+const initialState = {
+  currentXp: "",
+  level: 1,
+  xpGain: "",
+};
+
 const FormData = () => {
-  const [formData, newFormData] = useState({
-    currentXp: "",
-    level: 1,
-    xpGain: "",
-  });
+  const [formData, newFormData] = useState(initialState);
 
   const [result, setResult] = useState(false);
 
@@ -27,11 +29,7 @@ const FormData = () => {
   }
 
   function resetHandler() {
-    newFormData({
-      currentXp: "",
-      level: 1,
-      xpGain: "",
-    });
+    newFormData(initialState);
   }
 
   function changeHandler(event) {
