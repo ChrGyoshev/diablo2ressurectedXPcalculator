@@ -10,12 +10,11 @@ function Result({ clickHandler, formData }) {
   };
 
   const [estimateXp, setEstimateXp] = useState(0);
-  const currentExpirience = parseFloat(formData.currentXp.replace(/,/g, ""));
-
-  const level = playerLevel[formData.level];
-  const gain = parseFloat(formData.xpGain.replace(/,/g, ""));
-
   useEffect(() => {
+    const currentExpirience = parseFloat(formData.currentXp.replace(/,/g, ""));
+    const level = playerLevel[formData.level];
+    console.log(level);
+    const gain = parseFloat(formData.xpGain.replace(/,/g, ""));
     setEstimateXp((level - currentExpirience) / gain);
   }, []);
 
