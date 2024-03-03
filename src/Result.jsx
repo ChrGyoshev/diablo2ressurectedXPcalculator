@@ -61,7 +61,7 @@ function Result({ clickHandler, formData, resetHandler }) {
           </Modal.Footer>
         </Modal>
       ) : (
-        <ErrorBox errorHandler={errorHandler} />
+        <ErrorBox errorHandler={errorHandler} msg={"Wrong Data! Try Again!"} />
       )}
     </div>
   );
