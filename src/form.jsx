@@ -121,7 +121,11 @@ const FormData = () => {
           </div>
         </div>
       ) : (
-        <Result formData={formData} clickHandler={showResult} resetHandler= {resetHandler} />
+        <Result
+          formData={formData}
+          clickHandler={showResult}
+          resetHandler={resetHandler}
+        />
       )}
     </>
   );

@@ -23,9 +23,8 @@ function Result({ clickHandler, formData, resetHandler }) {
     const level = playerLevel[formData.level];
     const gain = parseFloat(formData.xpGain.replace(/,/g, ""));
     setEstimateXp((level - currentExpirience) / gain);
-    currentExpirience < level && setErrorBox(true);
-    console.log(level);
-    console.log(currentExpirience);
+
+    currentExpirience < level && setErrorBox(!errorBox);
   }, []);
 
   return (
