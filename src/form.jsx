@@ -18,7 +18,7 @@ const FormData = () => {
   function showResult() {
     setResult(!result);
   }
-  const options = Array.from({ length: 20 }, (_, index) => (
+  const options = Array.from({ length: 19 }, (_, index) => (
     <option key={index + 80} value={index + 80}>
       {index + 80}
     </option>
